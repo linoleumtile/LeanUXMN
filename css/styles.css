@@ -1,0 +1,43 @@
+/* event date display */
+.date {
+	height: 15%;
+	min-height: 60px;
+	width: 15%;
+	min-width: 100px;
+	background-color: #bccbd4;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 4px;
+	border-color: #acbeca;
+	color: #565f65;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.6;
+	margin-bottom: 15px;
+}
+.month {
+	font-size: 9pt;
+}
+
+.day {
+	font-size: 25pt;
+}
+.day sup {
+	font-size: 16px;
+	top: -12px;
+	padding-left: 2px;
+}
+
+/*google map display */
+.map {
+	height: 15%;
+	min-height: 100px;
+	width: 15%;
+	min-width: 100px;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 4px;
+	border-color: #acbeca;
+	margin-bottom: 15px;
+	background-color: #bccbd4;
+}

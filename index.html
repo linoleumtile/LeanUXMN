@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Index</title>
+    <title>Lean UX MN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
     <!--custom-->
     <link href="css/styles.css" rel="stylesheet" media="screen">
 
@@ -39,13 +40,20 @@
       <div class="page-header">
         <h1>Lean UX MN</h1>
       </div>
-      <!--<p><a href="http://www.meetup.com/LeanUXMN/events/137393062/" data-event="137393062" class="mu-rsvp-btn">RSVP</a></p>-->
       <div class="row">
         <div class="col-md-7">
-          <div class="jumbotron">
-            <div class="container" id="events">
-              <h2>Upcoming Events</h2>
-            </div>
+          <div class="container" id="events">
+            <h2>Events</h2>
+              <!--<p><a href="http://www.meetup.com/LeanUXMN/events/137393062/" data-event="137393062" class="mu-rsvp-btn">RSVP</a></p>-->
+              <div class="date">
+                <span class="month">SEPTEMBER</span><br />
+                <span class="day">17<sup>TH</sup></span>
+              </div>
+              <div class="map-title">
+                <div class="map" id="googleMap">
+                </div>
+                <p>Sevnthsin</p>
+              </div>
           </div>
           <div class="container" id="blog">
             <h2>Blog</h2>
@@ -70,5 +78,23 @@
     <script src="js/bootstrap.min.js"></script>
     <!--Meetup RSVP button script-->
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/3245529744623182445/script/api/mu.btns.js?id=j5topomb43c7p3i5nhcki45orh";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
+    <!--Google maps-->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDS8LB_bRao1v0Uzy3mPyo5QaB9KpdwOqw&sensor=false">
+    </script>
+
+    <script>
+    function initialize()
+    {
+    var mapProp = {
+      center:new google.maps.LatLng(44.998832,-93.246472),
+      zoom:5,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+    var map=new google.maps.Map(document.getElementById("googleMap")
+      ,mapProp);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
   </body>
 </html>
