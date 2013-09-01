@@ -44,17 +44,25 @@
         <div class="col-md-7">
           <div class="container" id="events">
             <h2>Events</h2>
-              <!--<p><a href="http://www.meetup.com/LeanUXMN/events/137393062/" data-event="137393062" class="mu-rsvp-btn">RSVP</a></p>-->
-              <div class="date">
-                <span class="month">SEPTEMBER</span><br />
-                <span class="day">17<sup>TH</sup></span>
-              </div>
-              <div class="map-title">
-                <div class="map" id="sevnthsin">
-                  <a href="http://google.com"></a>
+            <div class="event">
+              <div class="row">
+                <div class="col-md-9 pull-right">
+                  <h3><a target="_blank" href="http://www.meetup.com/LeanUXMN/events/137393062/">Lean UX September Meet up</a></h3>
+                  <p>Its finally time to meet up again. We have had many new people join and we have a lot to talk about. Details coming soon. Please RSVP soon!</p>
+                  <p><span class="time">6:00 PM</span> at <a class="location" href="https://maps.google.com/maps?safe=active&q=sevnthsin&bav=on.2,or.r_cp.r_qf.&bvm=bv.51495398,d.aWc,pv.xjs.s.en_US.M4-36_38X9A.O&biw=1534&bih=865&um=1&ie=UTF-8&hl=en&sa=N&tab=wl">Sevnthsin</a></p>
+                  <p><a href="http://www.meetup.com/LeanUXMN/events/137393062/" data-event="137393062" class="mu-rsvp-btn">RSVP</a></p>
                 </div>
-                <p>Sevnthsin</p>
+                <div class="col-md-3">
+                  <div class="date">
+                    <span class="month">SEPTEMBER</span><br />
+                    <span class="day">17<sup>TH</sup></span>
+                  </div>
+                  <div class="map" id="sevnthsin">
+                      <a href="http://google.com"></a>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
           <div class="container" id="blog">
             <h2>Blog</h2>
@@ -101,6 +109,7 @@
           window.location.href="https://maps.google.com/maps?gs_rn=26&gs_ri=psy-ab&tok=9Iu2rs4an7btcqfyNxiHoA&pq=google+map+api&cp=6&gs_id=3g&xhr=t&q=sevnthsin&safe=active&bav=on.2,or.r_cp.r_qf.&bvm=bv.51495398,d.aWc&biw=1026&bih=865&um=1&ie=UTF-8&hl=en&sa=N&tab=wl";
         });
 
+
       map.setOptions({draggableCursor:'pointer'});
 
       var marker=new google.maps.Marker({
@@ -108,6 +117,9 @@
         });
 
       marker.setMap(map);
+         google.maps.event.addListener(marker,'click',function(){
+          window.location.href="https://maps.google.com/maps?gs_rn=26&gs_ri=psy-ab&tok=9Iu2rs4an7btcqfyNxiHoA&pq=google+map+api&cp=6&gs_id=3g&xhr=t&q=sevnthsin&safe=active&bav=on.2,or.r_cp.r_qf.&bvm=bv.51495398,d.aWc&biw=1026&bih=865&um=1&ie=UTF-8&hl=en&sa=N&tab=wl";
+        });
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);
