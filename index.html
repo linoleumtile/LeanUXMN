@@ -50,7 +50,8 @@
                 <span class="day">17<sup>TH</sup></span>
               </div>
               <div class="map-title">
-                <div class="map" id="googleMap">
+                <div class="map" id="sevnthsin">
+                  <a href="http://google.com"></a>
                 </div>
                 <p>Sevnthsin</p>
               </div>
@@ -83,18 +84,33 @@
     </script>
 
     <script>
-    function initialize()
-    {
-    var mapProp = {
-      center:new google.maps.LatLng(44.998832,-93.246472),
-      zoom:5,
-      mapTypeId:google.maps.MapTypeId.ROADMAP
-      };
-    var map=new google.maps.Map(document.getElementById("googleMap")
-      ,mapProp);
-    }
+      var sevnthsin=new google.maps.LatLng(44.998832,-93.246472);
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+      function initialize()
+      {
+      var mapProp = {
+        center:sevnthsin,
+        zoom:11,
+        mapTypeId:google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI:true
+        };
+
+      var map=new google.maps.Map(document.getElementById("sevnthsin"),mapProp);
+
+      google.maps.event.addListener(map,'click',function(){
+          window.location.href="https://maps.google.com/maps?gs_rn=26&gs_ri=psy-ab&tok=9Iu2rs4an7btcqfyNxiHoA&pq=google+map+api&cp=6&gs_id=3g&xhr=t&q=sevnthsin&safe=active&bav=on.2,or.r_cp.r_qf.&bvm=bv.51495398,d.aWc&biw=1026&bih=865&um=1&ie=UTF-8&hl=en&sa=N&tab=wl";
+        });
+
+      map.setOptions({draggableCursor:'pointer'});
+
+      var marker=new google.maps.Marker({
+        position:sevnthsin,
+        });
+
+      marker.setMap(map);
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </body>
 </html>
