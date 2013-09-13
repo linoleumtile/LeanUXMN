@@ -28,11 +28,11 @@
         <a class="navbar-brand" href="#">Lean UX MN</a>
       </div><!--navbar-header-->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav navbar-right">
+        <!--<ul class="nav navbar-nav navbar-right">
           <li><a href="events.html">Events</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">Resources</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="#">About</a></li>-->
         </ul>
       </div><!--navbar-collapse-->
     </nav>
@@ -66,21 +66,59 @@
           </div>
           <div class="container" id="blog">
             <h2>Blog</h2>
-            <h3><em>No posts yet.</em></h3>
+            <h3>What we want for the Lean UX community in Minnesota<br /><small>by Beth McKeever</small></h3>
+            <p class="lead">We made big changes when we embraced Lean UX. Reducing documentation and increasing collaboration has radically changed how we work within our development teams. We want to create a space for teams in the Twin Cities to share how to get better and faster at what we do.</p>
+            <p>Joe and I went to the Lean Day UX conference earlier this year because it seemed different. It wasn't the same talks we had seen or heard about. Around the same time, Erik was reading about <a target="_blank" href="http://www.amazon.com/Lean-UX-Applying-Principles-Experience/dp/1449311652/">Lean UX <span class="glyphicon glyphicon-new-window"></span></a> and <a target="_blank" href="http://www.amazon.com/The-Lean-Startup-Entrepreneurs-Continuous/dp/0307887898/">Lean Startup <span class="glyphicon glyphicon-new-window"></span></a>. When we got back to Minnesota, we immediately started talking about how exciting some of these lean concepts were.</p>
+            <p>Co-located teams of UX, Dev, and PMs. Inexpensive but valuable testing techniques. Rapid prototyping while whiteboarding the wireframes. Each talk and section of these books had numerous ways to cut down on excessive documentation and get to the meat of our practice. We began to try out some of these things on various projects in our corporate setting, and it started gaining traction.</p>
+            <p>We know there's an amazing tech community in Minnesota. We know some of that community has already embraced lean techniques, and that even more teams want to find a way to do that. We're going to start by sharing what we've learned, and then invite the rest of the community to do the same.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="container" id="about">
             <h3>About</h3>
             <p>Lean UX MN began in March 2013 after attending <a href="http://www.leandayux.com/">Lean Day</a> in NYC.</p>
+            <p>Meetup organizers Joe Williams (<a href="http://www.twitter.com/woejilliams">@woejilliams</a>), Erik Mitchell (<a href="http://www.twitter.com/mitc0185">@mitc0185</a>) and Beth McKeever (<a href="http://www.twitter.com/linoleumtile">@linoleumtile</a>) wanted to bring learnings about Lean UX to the Minnesota community, as well as expose other lean efforts in the area.</p>
           </div>
           <div class="container" id="resources">
-            <h3>Resources</h3>
+            <h3>Resources<!--<small><span class="pull-right"><a href="#">See all<span class="glyphicon glyphicon-chevron-right"></span></a></span></small>--></h3>
+              <!--<h4>Past meetups</h4>
+              <div class="list-group">
+                <a href="#" class="list-group-item">
+                  <h5 class="list-group-item-heading">September Meetup</h5>
+                  <p class="list-group-item-text">Slides from both talks (Live style guides and Collaborative design)<br />Templates for collaborative sketch sessions</p>
+                </a>
+              </div>-->
+              <div class="list-group">
+                <a target="_blank" href="http://www.slideshare.net/EmilyHolmes/iterative-innovation-lean-ux-in-the-enterprise" class="list-group-item">
+                  <h4 class="list-group-item-heading">Iterative Innovation<span class="glyphicon glyphicon-new-window pull-right"></span></h4>
+                  <p class="list-group-item-text"><small>How small, iterative changes to your company's UX process can lead to bigger success.<br /><em>by Emily Holmes</em></small></p>
+                </a>
+                <!--<a href="#" class="list-group-item">See more <span class="glyphicon glyphicon-chevron-right pull-right"></span></a>-->
+                <a target="_blank" href="http://uxdesign.smashingmagazine.com/2011/03/07/lean-ux-getting-out-of-the-deliverables-business/" class="list-group-item">
+                  <h4 class="list-group-item-heading">Getting Out Of The Deliverables Business <span class="glyphicon glyphicon-new-window pull-right"></span></h4>
+                  <p class="list-group-item-text"><small>A definitive overview of Lean UX.<br /><em>by Jeff Gothelf</em></small></p>
+                </a>
+                <a target="_blank" href="http://www.leandaywest.com/" class="list-group-item">
+                  <h4 class="list-group-item-heading">Lean Day West <span class="glyphicon glyphicon-new-window pull-right"></span></h4>
+                  <p class="list-group-item-text"><small>Two days of workshops and talks detailing case studies and best practices implementing lean startup and lean UX in the enterprise.</small></p>
+                </a>
+                <a target="_blank" href="http://www.sevnthsin.com/" class="list-group-item">
+                    <img class="media-object pull-left" src="http://placehold.it/50x50" />
+                  <h4 class="list-group-item-heading">Sevnthsin <span class="glyphicon glyphicon-new-window pull-right"></span><br /><small>Sponsor for our 2nd meetup</small></h4>
+                  <p class="list-group-item-text"><small>Sevnthsin is a digital creative agency providing expertise in iPhone and Android Applications, social media and rich interactive solutions that truly engage.</small></p>
+                </a>
+            </div>
           </div>
         </div>
       </div>
+     <hr>
+      <footer>
+        <div class="container">
+          <p>&copy; Lean UX MN 2013</p>
+        </div>
+      </footer>
     </div><!--main container-->
-
+ 
 
     <!-- ===== SCRIPTS ====== -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -88,9 +126,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <!--Meetup RSVP button script-->
-    <script>
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/3245529744623182445/script/api/mu.btns.js?id=j5topomb43c7p3i5nhcki45orh";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");
-    </script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/3245529744623182445/script/api/mu.btns.js?id=j5topomb43c7p3i5nhcki45orh";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
     <!--Google maps-->
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDS8LB_bRao1v0Uzy3mPyo5QaB9KpdwOqw&sensor=false">
     </script>

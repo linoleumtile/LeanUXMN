@@ -61,3 +61,11 @@
 	border-color: #acbeca;
 	background-color: #bccbd4;
 }
+
+
+/* adjust images in table lists */
+.media-object {
+	padding-right: 15px;
+	padding-top: 5px;
+
+}
