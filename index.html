@@ -8,17 +8,20 @@ layout: default
       <div class="event">
         <div class="row">
           <div class="col-md-9 pull-right">
-            <h3><a target="_blank" href="http://www.meetup.com/LeanUXMN/events/137393062/">Lean UX September Meet up</a></h3>
-            <p>Its finally time to meet up again. We have had many new people join and we have a lot to talk about. Details coming soon. Please RSVP soon!</p>
-            <p><span class="time">6:00 PM</span> at <a class="location" href="https://maps.google.com/maps?safe=active&q=sevnthsin&bav=on.2,or.r_cp.r_qf.&bvm=bv.51495398,d.aWc,pv.xjs.s.en_US.M4-36_38X9A.O&biw=1534&bih=865&um=1&ie=UTF-8&hl=en&sa=N&tab=wl">Sevnthsin</a></p>
-            <p><a href="http://www.meetup.com/LeanUXMN/events/137393062/" data-event="137393062" class="mu-rsvp-btn">RSVP</a></p>
+            <h3><a target="_blank" href="http://www.meetup.com/LeanUXMN/events/137393062/">Lean UX MN November Meet up</a></h3>
+            <p>
+Our third meetup! We're meeting on Tuesday, November 19th at Intertech in Eagan, MN. There will be time for networking and conversations, and then we're planning
+a "fishbowl" discussion, around topics that you choose! Please RSVP on the meetup site so we know how much beer to get!
+            </p>
+            <p><span class="time">6:30 PM</span> at <a class="location" href="https://maps.google.com/maps?safe=active&q=sevnthsin&bav=on.2,or.r_cp.r_qf.&bvm=bv.51495398,d.aWc,pv.xjs.s.en_US.M4-36_38X9A.O&biw=1534&bih=865&um=1&ie=UTF-8&hl=en&sa=N&tab=wl">Intertech</a></p>
+            <p><a href="http://www.meetup.com/LeanUXMN/events/146688272/" data-event="146688272" class="mu-rsvp-btn">RSVP</a></p>
           </div>
           <div class="col-md-3">
             <div class="date">
-              <span class="month">SEPTEMBER</span><br />
-              <span class="day">17<sup>TH</sup></span>
+              <span class="month">NOVEMBER</span><br />
+              <span class="day">19<sup>TH</sup></span>
             </div>
-            <div class="map" id="sevnthsin">
+            <div class="map" id="intertech">
               <a href="http://google.com"></a>
             </div>
           </div>
@@ -77,40 +80,44 @@ layout: default
   </div>
 </div>
 
-<!--Meetup RSVP button script-->
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/3245529744623182445/script/api/mu.btns.js?id=j5topomb43c7p3i5nhcki45orh";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
-<!--Google maps-->
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDS8LB_bRao1v0Uzy3mPyo5QaB9KpdwOqw&sensor=false">
-</script>
 
+
+
+
+<!--Meetup RSVP button script-->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/598491059688185024633/script/api/mu.btns.js?id=uir4f8j0gnensgl09tmnuu22k";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
+
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDS8LB_bRao1v0Uzy3mPyo5QaB9KpdwOqw&sensor=false"></script>
 <script>
-var sevnthsin=new google.maps.LatLng(44.998832,-93.246472);
+// https://maps.google.com/maps?q=Intertech,+Thomas+Center+Drive,+Eagan,+MN&hl=en&ll=44.791795,-93.181089&spn=0.003946,0.005627&sll=46.44186,-93.36129&sspn=11.099464,23.049316&oq=intertech,+&t=h&z=18&iwloc=A
+var intertech=new google.maps.LatLng(44.791795,-93.181089);
 
 function initialize()
       {
         var mapProp = {
-          center:sevnthsin,
+          center:intertech,
           zoom:11,
           mapTypeId:google.maps.MapTypeId.ROADMAP,
           disableDefaultUI:true
         };
 
-  var map=new google.maps.Map(document.getElementById("sevnthsin"),mapProp);
+  var map=new google.maps.Map(document.getElementById("intertech"),mapProp);
+  var map_url = "https://maps.google.com/maps?q=Intertech,+Thomas+Center+Drive,+Eagan,+MN&hl=en&ll=44.795419,-93.181744&spn=0.022323,0.045018&sll=46.44186,-93.36129&sspn=11.099464,23.049316&oq=intertech,+&t=m&z=15&iwloc=A";
 
   google.maps.event.addListener(map,'click',function(){
-    window.location.href="https://maps.google.com/maps?gs_rn=26&gs_ri=psy-ab&tok=9Iu2rs4an7btcqfyNxiHoA&pq=google+map+api&cp=6&gs_id=3g&xhr=t&q=sevnthsin&safe=active&bav=on.2,or.r_cp.r_qf.&bvm=bv.51495398,d.aWc&biw=1026&bih=865&um=1&ie=UTF-8&hl=en&sa=N&tab=wl";
+    window.location.href = map_url;
   });
 
 
   map.setOptions({draggableCursor:'pointer'});
 
   var marker=new google.maps.Marker({
-    position:sevnthsin,
+    position:intertech,
   });
 
   marker.setMap(map);
   google.maps.event.addListener(marker,'click',function(){
-    window.location.href="https://maps.google.com/maps?gs_rn=26&gs_ri=psy-ab&tok=9Iu2rs4an7btcqfyNxiHoA&pq=google+map+api&cp=6&gs_id=3g&xhr=t&q=sevnthsin&safe=active&bav=on.2,or.r_cp.r_qf.&bvm=bv.51495398,d.aWc&biw=1026&bih=865&um=1&ie=UTF-8&hl=en&sa=N&tab=wl";
+    window.location.href = map_url;
   });
       }
 
