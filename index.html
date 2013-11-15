@@ -1,5 +1,6 @@
 ---
 layout: default
+map_url: https://maps.google.com/maps?q=Intertech,+Thomas+Center+Drive,+Eagan,+MN&hl=en&ll=44.795419,-93.181744&spn=0.022323,0.045018&sll=46.44186,-93.36129&sspn=11.099464,23.049316&oq=intertech,+&t=m&z=15&iwloc=A
 ---
 <div class="row">
   <div class="col-md-8">
@@ -7,24 +8,26 @@ layout: default
       <h2>Events</h2>
       <div class="event">
         <div class="row">
+        {% for event in site.categories.events limit:1 %}
           <div class="col-md-9 pull-right">
-            <h3><a target="_blank" href="http://www.meetup.com/LeanUXMN/events/137393062/">Lean UX MN November Meet up</a></h3>
+
+            <h3 style="margin-top: 5px;"><a target="_blank" href="{{ event.meetup_url }}">{{ event.title }}</a></h3>
             <p>
-Our third meetup! We're meeting on Tuesday, November 19th at Intertech in Eagan, MN. There will be time for networking and conversations, and then we're planning
-a "fishbowl" discussion, around topics that you choose! Please RSVP on the meetup site so we know how much beer to get!
+              {{ event.content }}
             </p>
-            <p><span class="time">6:30 PM</span> at <a class="location" href="https://maps.google.com/maps?safe=active&q=sevnthsin&bav=on.2,or.r_cp.r_qf.&bvm=bv.51495398,d.aWc,pv.xjs.s.en_US.M4-36_38X9A.O&biw=1534&bih=865&um=1&ie=UTF-8&hl=en&sa=N&tab=wl">Intertech</a></p>
-            <p><a href="http://www.meetup.com/LeanUXMN/events/146688272/" data-event="146688272" class="mu-rsvp-btn">RSVP</a></p>
+            <p><span class="time">{{ event.time }}</span> at <a class="location" target="_blank" href="{{ page.map_url }}">{{ event.meetup_location }}</a></p>
+            <p><a href="{{ event.meetup_url }}" data-event="{{ event.meetup_id }}" class="mu-rsvp-btn">RSVP</a></p>
           </div>
           <div class="col-md-3">
             <div class="date">
-              <span class="month">NOVEMBER</span><br />
-              <span class="day">19<sup>TH</sup></span>
+              <span class="month">{{ event.month }}</span><br />
+              <span class="day">{{ event.date_number }}<sup>{{ event.date_suffix }}</sup></span>
             </div>
-            <div class="map" id="intertech">
+            <div class="map" id="loc">
               <a href="http://google.com"></a>
             </div>
           </div>
+        {% endfor %}
         </div>
       </div>
     </div>
@@ -32,13 +35,15 @@ a "fishbowl" discussion, around topics that you choose! Please RSVP on the meetu
       <h2>Blog</h2>
 
       {% for post in site.posts %}
+      {% unless post.category == "events" %}
       <h3>{{ post.title }}
         <a href="{{ post.url }}"><span class="glyphicon glyphicon-link"></span></a>
         <br /><small>by {{ post.author }}</small></h3>
-      
-      {{ post.content }}
+        
+        {{ post.content }}
 
-      {% endfor %}
+    {% endunless %}
+    {% endfor %}
     </div>
   </div>
   <div class="col-md-4">
@@ -90,19 +95,19 @@ a "fishbowl" discussion, around topics that you choose! Please RSVP on the meetu
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDS8LB_bRao1v0Uzy3mPyo5QaB9KpdwOqw&sensor=false"></script>
 <script>
 // https://maps.google.com/maps?q=Intertech,+Thomas+Center+Drive,+Eagan,+MN&hl=en&ll=44.791795,-93.181089&spn=0.003946,0.005627&sll=46.44186,-93.36129&sspn=11.099464,23.049316&oq=intertech,+&t=h&z=18&iwloc=A
-var intertech=new google.maps.LatLng(44.791795,-93.181089);
+var loc=new google.maps.LatLng(44.791795,-93.181089);
 
 function initialize()
       {
         var mapProp = {
-          center:intertech,
+          center:loc,
           zoom:11,
           mapTypeId:google.maps.MapTypeId.ROADMAP,
           disableDefaultUI:true
         };
 
-  var map=new google.maps.Map(document.getElementById("intertech"),mapProp);
-  var map_url = "https://maps.google.com/maps?q=Intertech,+Thomas+Center+Drive,+Eagan,+MN&hl=en&ll=44.795419,-93.181744&spn=0.022323,0.045018&sll=46.44186,-93.36129&sspn=11.099464,23.049316&oq=intertech,+&t=m&z=15&iwloc=A";
+  var map=new google.maps.Map(document.getElementById("loc"),mapProp);
+
 
   google.maps.event.addListener(map,'click',function(){
     window.location.href = map_url;
@@ -112,7 +117,7 @@ function initialize()
   map.setOptions({draggableCursor:'pointer'});
 
   var marker=new google.maps.Marker({
-    position:intertech,
+    position:loc,
   });
 
   marker.setMap(map);
