@@ -1,6 +1,5 @@
 ---
 layout: default
-map_url: https://maps.google.com/maps?q=Intertech,+Thomas+Center+Drive,+Eagan,+MN&hl=en&ll=44.795419,-93.181744&spn=0.022323,0.045018&sll=46.44186,-93.36129&sspn=11.099464,23.049316&oq=intertech,+&t=m&z=15&iwloc=A
 ---
 <div class="row">
   <div class="col-md-8">
@@ -9,13 +8,14 @@ map_url: https://maps.google.com/maps?q=Intertech,+Thomas+Center+Drive,+Eagan,+M
       <div class="event">
         <div class="row">
         {% for event in site.categories.events limit:1 %}
+          <script>var meetup_geocode = [{{ event.meetup_geocode }}];</script>
           <div class="col-md-9 pull-right">
 
             <h3 style="margin-top: 5px;"><a target="_blank" href="{{ event.meetup_url }}">{{ event.title }}</a></h3>
             <p>
-              {{ event.content }}
+            {{ event.content }}
             </p>
-            <p><span class="time">{{ event.time }}</span> at <a class="location" target="_blank" href="{{ page.map_url }}">{{ event.meetup_location }}</a></p>
+            <p><span class="time">{{ event.time }}</span> at <a class="location" target="_blank" href="{{ event.map_url }}">{{ event.meetup_location }}</a></p>
             <p><a href="{{ event.meetup_url }}" data-event="{{ event.meetup_id }}" class="mu-rsvp-btn">RSVP</a></p>
           </div>
           <div class="col-md-3">
@@ -53,14 +53,7 @@ map_url: https://maps.google.com/maps?q=Intertech,+Thomas+Center+Drive,+Eagan,+M
       <p>Meetup organizers Joe Williams (<a href="http://www.twitter.com/woejilliams">@woejilliams</a>), Erik Mitchell (<a href="http://www.twitter.com/mitc0185">@mitc0185</a>) and Beth McKeever (<a href="http://www.twitter.com/linoleumtile">@linoleumtile</a>) wanted to bring learnings about Lean UX to the Minnesota community, as well as expose other lean efforts in the area.</p>
     </div>
     <div class="container" id="resources">
-      <h3>Resources<!--<small><span class="pull-right"><a href="#">See all<span class="glyphicon glyphicon-chevron-right"></span></a></span></small>--></h3>
-      <!--<h4>Past meetups</h4>
-      <div class="list-group">
-      <a href="#" class="list-group-item">
-      <h5 class="list-group-item-heading">September Meetup</h5>
-      <p class="list-group-item-text">Slides from both talks (Live style guides and Collaborative design)<br />Templates for collaborative sketch sessions</p>
-                </a>
-              </div>-->
+      <h3>Resources</h3>
       <div class="list-group">
         <a target="_blank" href="http://www.slideshare.net/EmilyHolmes/iterative-innovation-lean-ux-in-the-enterprise" class="list-group-item">
           <h4 class="list-group-item-heading">Iterative Innovation<span class="glyphicon glyphicon-new-window pull-right"></span></h4>
@@ -91,40 +84,5 @@ map_url: https://maps.google.com/maps?q=Intertech,+Thomas+Center+Drive,+Eagan,+M
 
 <!--Meetup RSVP button script-->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/598491059688185024633/script/api/mu.btns.js?id=uir4f8j0gnensgl09tmnuu22k";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
-
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDS8LB_bRao1v0Uzy3mPyo5QaB9KpdwOqw&sensor=false"></script>
-<script>
-// https://maps.google.com/maps?q=Intertech,+Thomas+Center+Drive,+Eagan,+MN&hl=en&ll=44.791795,-93.181089&spn=0.003946,0.005627&sll=46.44186,-93.36129&sspn=11.099464,23.049316&oq=intertech,+&t=h&z=18&iwloc=A
-var loc=new google.maps.LatLng(44.791795,-93.181089);
-
-function initialize()
-      {
-        var mapProp = {
-          center:loc,
-          zoom:11,
-          mapTypeId:google.maps.MapTypeId.ROADMAP,
-          disableDefaultUI:true
-        };
-
-  var map=new google.maps.Map(document.getElementById("loc"),mapProp);
-
-
-  google.maps.event.addListener(map,'click',function(){
-    window.location.href = map_url;
-  });
-
-
-  map.setOptions({draggableCursor:'pointer'});
-
-  var marker=new google.maps.Marker({
-    position:loc,
-  });
-
-  marker.setMap(map);
-  google.maps.event.addListener(marker,'click',function(){
-    window.location.href = map_url;
-  });
-      }
-
-      google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+<script src="/js/maps.js"></script>
