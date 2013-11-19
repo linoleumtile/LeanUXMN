@@ -1,3 +1,4 @@
 name: Lean UX MN
 markdown: redcarpet
 pygments: true
+version: 1.0.0-SNAPSHOT
